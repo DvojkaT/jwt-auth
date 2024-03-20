@@ -3,24 +3,24 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Middleware;
+namespace ifs\JWTAuth\Test\Middleware;
 
 use Mockery;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
-use Tymon\JWTAuth\Http\Middleware\Check;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Test\Stubs\UserStub;
+use ifs\JWTAuth\Exceptions\TokenInvalidException;
+use ifs\JWTAuth\Http\Middleware\Check;
+use ifs\JWTAuth\Http\Parser\Parser;
+use ifs\JWTAuth\Test\Stubs\UserStub;
 
 class CheckTest extends AbstractMiddlewareTest
 {
     /**
-     * @var \Tymon\JWTAuth\Http\Middleware\Check
+     * @var \ifs\JWTAuth\Http\Middleware\Check
      */
     protected $middleware;
 

@@ -1,5 +1,5 @@
 {
-    "name": "tymon/jwt-auth",
+    "name": "ifs/jwt-auth",
     "description": "JSON Web Token Authentication for Laravel and Lumen",
     "keywords": [
         "auth",
@@ -8,20 +8,7 @@
         "jwt",
         "laravel"
     ],
-    "homepage": "https://github.com/tymondesigns/jwt-auth",
-    "support": {
-        "issues": "https://github.com/tymondesigns/jwt-auth/issues",
-        "source": "https://github.com/tymondesigns/jwt-auth"
-    },
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Sean Tymon",
-            "email": "tymon148@gmail.com",
-            "homepage": "https://tymon.xyz",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": "^8.0",
         "illuminate/auth": "^9.0|^10.0|^11.0",
@@ -40,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tymon\\JWTAuth\\": "src/"
+            "ifs\\JWTAuth\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tymon\\JWTAuth\\Test\\": "tests/"
+            "ifs\\JWTAuth\\Test\\": "tests/"
         }
     },
     "extra": {
@@ -55,20 +42,14 @@
         },
         "laravel": {
             "aliases": {
-                "JWTAuth": "Tymon\\JWTAuth\\Facades\\JWTAuth",
-                "JWTFactory": "Tymon\\JWTAuth\\Facades\\JWTFactory"
+                "JWTAuth": "ifs\\JWTAuth\\Facades\\JWTAuth",
+                "JWTFactory": "ifs\\JWTAuth\\Facades\\JWTFactory"
             },
             "providers": [
-                "Tymon\\JWTAuth\\Providers\\LaravelServiceProvider"
+                "ifs\\JWTAuth\\Providers\\LaravelServiceProvider"
             ]
         }
     },
-    "funding": [
-        {
-            "type": "patreon",
-            "url": "https://www.patreon.com/seantymon"
-        }
-    ],
     "config": {
         "sort-packages": true
     },

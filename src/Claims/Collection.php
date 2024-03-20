@@ -3,13 +3,13 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Claims;
+namespace ifs\JWTAuth\Claims;
 
 use Illuminate\Support\Collection as IlluminateCollection;
 use Illuminate\Support\Str;
@@ -33,7 +33,7 @@ class Collection extends IlluminateCollection
      * @param  string  $name
      * @param  callable  $callback
      * @param  mixed  $default
-     * @return \Tymon\JWTAuth\Claims\Claim
+     * @return \ifs\JWTAuth\Claims\Claim
      */
     public function getByClaimName($name, callable $callback = null, $default = null)
     {

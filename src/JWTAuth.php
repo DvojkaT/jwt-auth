@@ -3,16 +3,16 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ifs\JWTAuth;
 
-use Tymon\JWTAuth\Contracts\Providers\Auth;
-use Tymon\JWTAuth\Http\Parser\Parser;
+use ifs\JWTAuth\Contracts\Providers\Auth;
+use ifs\JWTAuth\Http\Parser\Parser;
 
 /** @deprecated */
 class JWTAuth extends JWT
@@ -20,16 +20,16 @@ class JWTAuth extends JWT
     /**
      * The authentication provider.
      *
-     * @var \Tymon\JWTAuth\Contracts\Providers\Auth
+     * @var \ifs\JWTAuth\Contracts\Providers\Auth
      */
     protected $auth;
 
     /**
      * Constructor.
      *
-     * @param  \Tymon\JWTAuth\Manager  $manager
-     * @param  \Tymon\JWTAuth\Contracts\Providers\Auth  $auth
-     * @param  \Tymon\JWTAuth\Http\Parser\Parser  $parser
+     * @param  \ifs\JWTAuth\Manager  $manager
+     * @param  \ifs\JWTAuth\Contracts\Providers\Auth  $auth
+     * @param  \ifs\JWTAuth\Http\Parser\Parser  $parser
      * @return void
      */
     public function __construct(Manager $manager, Auth $auth, Parser $parser)
@@ -56,7 +56,7 @@ class JWTAuth extends JWT
     /**
      * Authenticate a user via a token.
      *
-     * @return \Tymon\JWTAuth\Contracts\JWTSubject|false
+     * @return \ifs\JWTAuth\Contracts\JWTSubject|false
      */
     public function authenticate()
     {
@@ -72,7 +72,7 @@ class JWTAuth extends JWT
     /**
      * Alias for authenticate().
      *
-     * @return \Tymon\JWTAuth\Contracts\JWTSubject|false
+     * @return \ifs\JWTAuth\Contracts\JWTSubject|false
      */
     public function toUser()
     {
@@ -82,7 +82,7 @@ class JWTAuth extends JWT
     /**
      * Get the authenticated user.
      *
-     * @return \Tymon\JWTAuth\Contracts\JWTSubject
+     * @return \ifs\JWTAuth\Contracts\JWTSubject
      */
     public function user()
     {

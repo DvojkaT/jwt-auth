@@ -3,13 +3,13 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers\JWT;
+namespace ifs\JWTAuth\Providers\JWT;
 
 use DateTimeImmutable;
 use DateTimeInterface;
@@ -24,9 +24,9 @@ use Lcobucci\JWT\Signer\Rsa;
 use Lcobucci\JWT\Token\Builder;
 use Lcobucci\JWT\Token\RegisteredClaims;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
-use Tymon\JWTAuth\Contracts\Providers\JWT;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use ifs\JWTAuth\Contracts\Providers\JWT;
+use ifs\JWTAuth\Exceptions\JWTException;
+use ifs\JWTAuth\Exceptions\TokenInvalidException;
 
 class Lcobucci extends Provider implements JWT
 {
@@ -80,7 +80,7 @@ class Lcobucci extends Provider implements JWT
      * @param  array  $payload
      * @return string
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ifs\JWTAuth\Exceptions\JWTException
      */
     public function encode(array $payload)
     {
@@ -101,7 +101,7 @@ class Lcobucci extends Provider implements JWT
      * @param  string  $token
      * @return array
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ifs\JWTAuth\Exceptions\JWTException
      */
     public function decode($token)
     {
@@ -197,7 +197,7 @@ class Lcobucci extends Provider implements JWT
      *
      * @return \Lcobucci\JWT\Signer
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ifs\JWTAuth\Exceptions\JWTException
      */
     protected function getSigner()
     {
@@ -228,7 +228,7 @@ class Lcobucci extends Provider implements JWT
      *
      * @return \Lcobucci\JWT\Signer\Key
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ifs\JWTAuth\Exceptions\JWTException
      */
     protected function getSigningKey()
     {
@@ -252,7 +252,7 @@ class Lcobucci extends Provider implements JWT
      *
      * @return \Lcobucci\JWT\Signer\Key
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \ifs\JWTAuth\Exceptions\JWTException
      */
     protected function getVerificationKey()
     {

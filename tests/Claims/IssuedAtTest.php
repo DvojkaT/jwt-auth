@@ -3,17 +3,17 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Claims;
+namespace ifs\JWTAuth\Test\Claims;
 
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Exceptions\InvalidClaimException;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use ifs\JWTAuth\Claims\IssuedAt;
+use ifs\JWTAuth\Exceptions\InvalidClaimException;
+use ifs\JWTAuth\Test\AbstractTestCase;
 
 class IssuedAtTest extends AbstractTestCase
 {

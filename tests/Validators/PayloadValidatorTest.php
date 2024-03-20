@@ -3,31 +3,31 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Validators;
+namespace ifs\JWTAuth\Test\Validators;
 
-use Tymon\JWTAuth\Claims\Collection;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Exceptions\InvalidClaimException;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
-use Tymon\JWTAuth\Test\AbstractTestCase;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ifs\JWTAuth\Claims\Collection;
+use ifs\JWTAuth\Claims\Expiration;
+use ifs\JWTAuth\Claims\IssuedAt;
+use ifs\JWTAuth\Claims\Issuer;
+use ifs\JWTAuth\Claims\JwtId;
+use ifs\JWTAuth\Claims\NotBefore;
+use ifs\JWTAuth\Claims\Subject;
+use ifs\JWTAuth\Exceptions\InvalidClaimException;
+use ifs\JWTAuth\Exceptions\TokenExpiredException;
+use ifs\JWTAuth\Exceptions\TokenInvalidException;
+use ifs\JWTAuth\Test\AbstractTestCase;
+use ifs\JWTAuth\Validators\PayloadValidator;
 
 class PayloadValidatorTest extends AbstractTestCase
 {
     /**
-     * @var \Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \ifs\JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 

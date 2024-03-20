@@ -3,17 +3,17 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Claims;
+namespace ifs\JWTAuth\Claims;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Tymon\JWTAuth\Support\Utils;
+use ifs\JWTAuth\Support\Utils;
 
 class Factory
 {
@@ -69,7 +69,7 @@ class Factory
      *
      * @param  string  $name
      * @param  mixed  $value
-     * @return \Tymon\JWTAuth\Claims\Claim
+     * @return \ifs\JWTAuth\Claims\Claim
      */
     public function get($name, $value)
     {
@@ -99,7 +99,7 @@ class Factory
      * Generate the initial value and return the Claim instance.
      *
      * @param  string  $name
-     * @return \Tymon\JWTAuth\Claims\Claim
+     * @return \ifs\JWTAuth\Claims\Claim
      */
     public function make($name)
     {

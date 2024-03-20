@@ -3,38 +3,38 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers;
+namespace ifs\JWTAuth\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Namshi\JOSE\JWS;
-use Tymon\JWTAuth\Blacklist;
-use Tymon\JWTAuth\Claims\Factory as ClaimFactory;
-use Tymon\JWTAuth\Console\JWTGenerateSecretCommand;
-use Tymon\JWTAuth\Contracts\Providers\Auth;
-use Tymon\JWTAuth\Contracts\Providers\JWT as JWTContract;
-use Tymon\JWTAuth\Contracts\Providers\Storage;
-use Tymon\JWTAuth\Factory;
-use Tymon\JWTAuth\Http\Middleware\Authenticate;
-use Tymon\JWTAuth\Http\Middleware\AuthenticateAndRenew;
-use Tymon\JWTAuth\Http\Middleware\Check;
-use Tymon\JWTAuth\Http\Middleware\RefreshToken;
-use Tymon\JWTAuth\Http\Parser\AuthHeaders;
-use Tymon\JWTAuth\Http\Parser\InputSource;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Http\Parser\QueryString;
-use Tymon\JWTAuth\JWT;
-use Tymon\JWTAuth\JWTAuth;
-use Tymon\JWTAuth\JWTGuard;
-use Tymon\JWTAuth\Manager;
-use Tymon\JWTAuth\Providers\JWT\Lcobucci;
-use Tymon\JWTAuth\Providers\JWT\Namshi;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ifs\JWTAuth\Blacklist;
+use ifs\JWTAuth\Claims\Factory as ClaimFactory;
+use ifs\JWTAuth\Console\JWTGenerateSecretCommand;
+use ifs\JWTAuth\Contracts\Providers\Auth;
+use ifs\JWTAuth\Contracts\Providers\JWT as JWTContract;
+use ifs\JWTAuth\Contracts\Providers\Storage;
+use ifs\JWTAuth\Factory;
+use ifs\JWTAuth\Http\Middleware\Authenticate;
+use ifs\JWTAuth\Http\Middleware\AuthenticateAndRenew;
+use ifs\JWTAuth\Http\Middleware\Check;
+use ifs\JWTAuth\Http\Middleware\RefreshToken;
+use ifs\JWTAuth\Http\Parser\AuthHeaders;
+use ifs\JWTAuth\Http\Parser\InputSource;
+use ifs\JWTAuth\Http\Parser\Parser;
+use ifs\JWTAuth\Http\Parser\QueryString;
+use ifs\JWTAuth\JWT;
+use ifs\JWTAuth\JWTAuth;
+use ifs\JWTAuth\JWTGuard;
+use ifs\JWTAuth\Manager;
+use ifs\JWTAuth\Providers\JWT\Lcobucci;
+use ifs\JWTAuth\Providers\JWT\Namshi;
+use ifs\JWTAuth\Validators\PayloadValidator;
 
 abstract class AbstractServiceProvider extends ServiceProvider
 {
@@ -81,7 +81,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
         $this->registerPayloadFactory();
         $this->registerJWTCommand();
 
-        $this->commands('tymon.jwt.secret');
+        $this->commands('ifs.jwt.secret');
     }
 
     /**
@@ -93,7 +93,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
     {
         $this->app['auth']->extend('jwt', function ($app, $name, array $config) {
             $guard = new JWTGuard(
-                $app['tymon.jwt'],
+                $app['ifs.jwt'],
                 $app['auth']->createUserProvider($config['provider']),
                 $app['request']
             );
@@ -111,17 +111,17 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerAliases()
     {
-        $this->app->alias('tymon.jwt', JWT::class);
-        $this->app->alias('tymon.jwt.auth', JWTAuth::class);
-        $this->app->alias('tymon.jwt.provider.jwt', JWTContract::class);
-        $this->app->alias('tymon.jwt.provider.jwt.namshi', Namshi::class);
-        $this->app->alias('tymon.jwt.provider.jwt.lcobucci', Lcobucci::class);
-        $this->app->alias('tymon.jwt.provider.auth', Auth::class);
-        $this->app->alias('tymon.jwt.provider.storage', Storage::class);
-        $this->app->alias('tymon.jwt.manager', Manager::class);
-        $this->app->alias('tymon.jwt.blacklist', Blacklist::class);
-        $this->app->alias('tymon.jwt.payload.factory', Factory::class);
-        $this->app->alias('tymon.jwt.validators.payload', PayloadValidator::class);
+        $this->app->alias('ifs.jwt', JWT::class);
+        $this->app->alias('ifs.jwt.auth', JWTAuth::class);
+        $this->app->alias('ifs.jwt.provider.jwt', JWTContract::class);
+        $this->app->alias('ifs.jwt.provider.jwt.namshi', Namshi::class);
+        $this->app->alias('ifs.jwt.provider.jwt.lcobucci', Lcobucci::class);
+        $this->app->alias('ifs.jwt.provider.auth', Auth::class);
+        $this->app->alias('ifs.jwt.provider.storage', Storage::class);
+        $this->app->alias('ifs.jwt.manager', Manager::class);
+        $this->app->alias('ifs.jwt.blacklist', Blacklist::class);
+        $this->app->alias('ifs.jwt.payload.factory', Factory::class);
+        $this->app->alias('ifs.jwt.validators.payload', PayloadValidator::class);
     }
 
     /**
@@ -134,7 +134,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
         $this->registerNamshiProvider();
         $this->registerLcobucciProvider();
 
-        $this->app->singleton('tymon.jwt.provider.jwt', function ($app) {
+        $this->app->singleton('ifs.jwt.provider.jwt', function ($app) {
             return $this->getConfigInstance('providers.jwt');
         });
     }
@@ -146,7 +146,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerNamshiProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.jwt.namshi', function ($app) {
+        $this->app->singleton('ifs.jwt.provider.jwt.namshi', function ($app) {
             return new Namshi(
                 new JWS(['typ' => 'JWT', 'alg' => $this->config('algo')]),
                 $this->config('secret'),
@@ -163,7 +163,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerLcobucciProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.jwt.lcobucci', function ($app) {
+        $this->app->singleton('ifs.jwt.provider.jwt.lcobucci', function ($app) {
             return new Lcobucci(
                 $this->config('secret'),
                 $this->config('algo'),
@@ -179,7 +179,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerAuthProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.auth', function () {
+        $this->app->singleton('ifs.jwt.provider.auth', function () {
             return $this->getConfigInstance('providers.auth');
         });
     }
@@ -191,7 +191,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerStorageProvider()
     {
-        $this->app->singleton('tymon.jwt.provider.storage', function () {
+        $this->app->singleton('ifs.jwt.provider.storage', function () {
             return $this->getConfigInstance('providers.storage');
         });
     }
@@ -203,11 +203,11 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerManager()
     {
-        $this->app->singleton('tymon.jwt.manager', function ($app) {
+        $this->app->singleton('ifs.jwt.manager', function ($app) {
             $instance = new Manager(
-                $app['tymon.jwt.provider.jwt'],
-                $app['tymon.jwt.blacklist'],
-                $app['tymon.jwt.payload.factory']
+                $app['ifs.jwt.provider.jwt'],
+                $app['ifs.jwt.blacklist'],
+                $app['ifs.jwt.payload.factory']
             );
 
             return $instance->setBlacklistEnabled((bool) $this->config('blacklist_enabled'))
@@ -222,7 +222,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerTokenParser()
     {
-        $this->app->singleton('tymon.jwt.parser', function ($app) {
+        $this->app->singleton('ifs.jwt.parser', function ($app) {
             $parser = new Parser(
                 $app['request'],
                 [
@@ -245,10 +245,10 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerJWT()
     {
-        $this->app->singleton('tymon.jwt', function ($app) {
+        $this->app->singleton('ifs.jwt', function ($app) {
             return (new JWT(
-                $app['tymon.jwt.manager'],
-                $app['tymon.jwt.parser']
+                $app['ifs.jwt.manager'],
+                $app['ifs.jwt.parser']
             ))->lockSubject($this->config('lock_subject'));
         });
     }
@@ -260,11 +260,11 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerJWTAuth()
     {
-        $this->app->singleton('tymon.jwt.auth', function ($app) {
+        $this->app->singleton('ifs.jwt.auth', function ($app) {
             return (new JWTAuth(
-                $app['tymon.jwt.manager'],
-                $app['tymon.jwt.provider.auth'],
-                $app['tymon.jwt.parser']
+                $app['ifs.jwt.manager'],
+                $app['ifs.jwt.provider.auth'],
+                $app['ifs.jwt.parser']
             ))->lockSubject($this->config('lock_subject'));
         });
     }
@@ -276,8 +276,8 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerJWTBlacklist()
     {
-        $this->app->singleton('tymon.jwt.blacklist', function ($app) {
-            $instance = new Blacklist($app['tymon.jwt.provider.storage']);
+        $this->app->singleton('ifs.jwt.blacklist', function ($app) {
+            $instance = new Blacklist($app['ifs.jwt.provider.storage']);
 
             return $instance->setGracePeriod($this->config('blacklist_grace_period'))
                             ->setRefreshTTL($this->config('refresh_ttl'));
@@ -291,7 +291,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerPayloadValidator()
     {
-        $this->app->singleton('tymon.jwt.validators.payload', function () {
+        $this->app->singleton('ifs.jwt.validators.payload', function () {
             return (new PayloadValidator)
                 ->setRefreshTTL($this->config('refresh_ttl'))
                 ->setRequiredClaims($this->config('required_claims'));
@@ -305,7 +305,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerClaimFactory()
     {
-        $this->app->singleton('tymon.jwt.claim.factory', function ($app) {
+        $this->app->singleton('ifs.jwt.claim.factory', function ($app) {
             $factory = new ClaimFactory($app['request']);
             $app->refresh('request', $factory, 'setRequest');
 
@@ -321,10 +321,10 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerPayloadFactory()
     {
-        $this->app->singleton('tymon.jwt.payload.factory', function ($app) {
+        $this->app->singleton('ifs.jwt.payload.factory', function ($app) {
             return new Factory(
-                $app['tymon.jwt.claim.factory'],
-                $app['tymon.jwt.validators.payload']
+                $app['ifs.jwt.claim.factory'],
+                $app['ifs.jwt.validators.payload']
             );
         });
     }
@@ -336,7 +336,7 @@ abstract class AbstractServiceProvider extends ServiceProvider
      */
     protected function registerJWTCommand()
     {
-        $this->app->singleton('tymon.jwt.secret', function () {
+        $this->app->singleton('ifs.jwt.secret', function () {
             return new JWTGenerateSecretCommand;
         });
     }

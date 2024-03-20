@@ -3,23 +3,23 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Middleware;
+namespace ifs\JWTAuth\Test\Middleware;
 
 use Illuminate\Http\Request;
 use Mockery;
-use Tymon\JWTAuth\JWTAuth;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use ifs\JWTAuth\JWTAuth;
+use ifs\JWTAuth\Test\AbstractTestCase;
 
 abstract class AbstractMiddlewareTest extends AbstractTestCase
 {
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\JWTAuth
+     * @var \Mockery\MockInterface|\ifs\JWTAuth\JWTAuth
      */
     protected $auth;
 

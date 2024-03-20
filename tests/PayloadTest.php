@@ -3,38 +3,38 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace ifs\JWTAuth\Test;
 
 use BadMethodCallException;
 use Mockery;
-use Tymon\JWTAuth\Claims\Audience;
-use Tymon\JWTAuth\Claims\Claim;
-use Tymon\JWTAuth\Claims\Collection;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Exceptions\PayloadException;
-use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ifs\JWTAuth\Claims\Audience;
+use ifs\JWTAuth\Claims\Claim;
+use ifs\JWTAuth\Claims\Collection;
+use ifs\JWTAuth\Claims\Expiration;
+use ifs\JWTAuth\Claims\IssuedAt;
+use ifs\JWTAuth\Claims\Issuer;
+use ifs\JWTAuth\Claims\JwtId;
+use ifs\JWTAuth\Claims\NotBefore;
+use ifs\JWTAuth\Claims\Subject;
+use ifs\JWTAuth\Exceptions\PayloadException;
+use ifs\JWTAuth\Payload;
+use ifs\JWTAuth\Validators\PayloadValidator;
 
 class PayloadTest extends AbstractTestCase
 {
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \Mockery\MockInterface|\ifs\JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 
     /**
-     * @var \Tymon\JWTAuth\Payload
+     * @var \ifs\JWTAuth\Payload
      */
     protected $payload;
 
@@ -47,7 +47,7 @@ class PayloadTest extends AbstractTestCase
 
     /**
      * @param  array  $extraClaims
-     * @return \Tymon\JWTAuth\Payload
+     * @return \ifs\JWTAuth\Payload
      */
     private function getTestPayload(array $extraClaims = [])
     {

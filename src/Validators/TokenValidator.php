@@ -3,15 +3,15 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Validators;
+namespace ifs\JWTAuth\Validators;
 
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use ifs\JWTAuth\Exceptions\TokenInvalidException;
 
 class TokenValidator extends Validator
 {
@@ -30,7 +30,7 @@ class TokenValidator extends Validator
      * @param  string  $token
      * @return string
      *
-     * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @throws \ifs\JWTAuth\Exceptions\TokenInvalidException
      */
     protected function validateStructure($token)
     {

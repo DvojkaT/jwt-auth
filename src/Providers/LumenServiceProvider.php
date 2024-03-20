@@ -3,15 +3,15 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers;
+namespace ifs\JWTAuth\Providers;
 
-use Tymon\JWTAuth\Http\Parser\LumenRouteParams;
+use ifs\JWTAuth\Http\Parser\LumenRouteParams;
 
 class LumenServiceProvider extends AbstractServiceProvider
 {
@@ -29,6 +29,6 @@ class LumenServiceProvider extends AbstractServiceProvider
 
         $this->extendAuthGuard();
 
-        $this->app['tymon.jwt.parser']->addParser(new LumenRouteParams);
+        $this->app['ifs.jwt.parser']->addParser(new LumenRouteParams);
     }
 }

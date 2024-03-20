@@ -3,20 +3,20 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ifs\JWTAuth;
 
-use Tymon\JWTAuth\Claims\Claim;
-use Tymon\JWTAuth\Claims\Collection;
-use Tymon\JWTAuth\Claims\Factory as ClaimFactory;
-use Tymon\JWTAuth\Support\CustomClaims;
-use Tymon\JWTAuth\Support\RefreshFlow;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use ifs\JWTAuth\Claims\Claim;
+use ifs\JWTAuth\Claims\Collection;
+use ifs\JWTAuth\Claims\Factory as ClaimFactory;
+use ifs\JWTAuth\Support\CustomClaims;
+use ifs\JWTAuth\Support\RefreshFlow;
+use ifs\JWTAuth\Validators\PayloadValidator;
 
 class Factory
 {
@@ -25,14 +25,14 @@ class Factory
     /**
      * The claim factory.
      *
-     * @var \Tymon\JWTAuth\Claims\Factory
+     * @var \ifs\JWTAuth\Claims\Factory
      */
     protected $claimFactory;
 
     /**
      * The validator.
      *
-     * @var \Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \ifs\JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 
@@ -52,15 +52,15 @@ class Factory
     /**
      * The claims collection.
      *
-     * @var \Tymon\JWTAuth\Claims\Collection
+     * @var \ifs\JWTAuth\Claims\Collection
      */
     protected $claims;
 
     /**
      * Constructor.
      *
-     * @param  \Tymon\JWTAuth\Claims\Factory  $claimFactory
-     * @param  \Tymon\JWTAuth\Validators\PayloadValidator  $validator
+     * @param  \ifs\JWTAuth\Claims\Factory  $claimFactory
+     * @param  \ifs\JWTAuth\Validators\PayloadValidator  $validator
      * @return void
      */
     public function __construct(ClaimFactory $claimFactory, PayloadValidator $validator)
@@ -74,7 +74,7 @@ class Factory
      * Create the Payload instance.
      *
      * @param  bool  $resetClaims
-     * @return \Tymon\JWTAuth\Payload
+     * @return \ifs\JWTAuth\Payload
      */
     public function make($resetClaims = false)
     {
@@ -150,7 +150,7 @@ class Factory
     /**
      * Build out the Claim DTO's.
      *
-     * @return \Tymon\JWTAuth\Claims\Collection
+     * @return \ifs\JWTAuth\Claims\Collection
      */
     protected function resolveClaims()
     {
@@ -162,7 +162,7 @@ class Factory
     /**
      * Build and get the Claims Collection.
      *
-     * @return \Tymon\JWTAuth\Claims\Collection
+     * @return \ifs\JWTAuth\Claims\Collection
      */
     public function buildClaimsCollection()
     {
@@ -172,8 +172,8 @@ class Factory
     /**
      * Get a Payload instance with a claims collection.
      *
-     * @param  \Tymon\JWTAuth\Claims\Collection  $claims
-     * @return \Tymon\JWTAuth\Payload
+     * @param  \ifs\JWTAuth\Claims\Collection  $claims
+     * @return \ifs\JWTAuth\Payload
      */
     public function withClaims(Collection $claims)
     {
@@ -229,7 +229,7 @@ class Factory
     /**
      * Get the PayloadValidator instance.
      *
-     * @return \Tymon\JWTAuth\Validators\PayloadValidator
+     * @return \ifs\JWTAuth\Validators\PayloadValidator
      */
     public function validator()
     {

@@ -3,18 +3,18 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Claims;
+namespace ifs\JWTAuth\Claims;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
-use Tymon\JWTAuth\Contracts\Claim as ClaimContract;
+use ifs\JWTAuth\Contracts\Claim as ClaimContract;
 
 abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializable
 {
@@ -47,7 +47,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
      * @param  mixed  $value
      * @return $this
      *
-     * @throws \Tymon\JWTAuth\Exceptions\InvalidClaimException
+     * @throws \ifs\JWTAuth\Exceptions\InvalidClaimException
      */
     public function setValue($value)
     {

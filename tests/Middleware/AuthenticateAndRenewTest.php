@@ -3,26 +3,26 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Middleware;
+namespace ifs\JWTAuth\Test\Middleware;
 
 use Illuminate\Http\Response;
 use Mockery;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
-use Tymon\JWTAuth\Http\Middleware\AuthenticateAndRenew;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Test\Stubs\UserStub;
+use ifs\JWTAuth\Exceptions\TokenInvalidException;
+use ifs\JWTAuth\Http\Middleware\AuthenticateAndRenew;
+use ifs\JWTAuth\Http\Parser\Parser;
+use ifs\JWTAuth\Test\Stubs\UserStub;
 
 class AuthenticateAndRenewTest extends AbstractMiddlewareTest
 {
     /**
-     * @var \Tymon\JWTAuth\Http\Middleware\Authenticate|\Tymon\JWTAuth\Http\Middleware\AuthenticateAndRenew
+     * @var \ifs\JWTAuth\Http\Middleware\Authenticate|\ifs\JWTAuth\Http\Middleware\AuthenticateAndRenew
      */
     protected $middleware;
 

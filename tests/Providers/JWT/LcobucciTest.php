@@ -3,20 +3,20 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\JWT;
+namespace ifs\JWTAuth\Test\Providers\JWT;
 
 use Illuminate\Support\Str;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
-use Tymon\JWTAuth\Providers\JWT\Lcobucci;
-use Tymon\JWTAuth\Providers\JWT\Provider;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use ifs\JWTAuth\Exceptions\JWTException;
+use ifs\JWTAuth\Exceptions\TokenInvalidException;
+use ifs\JWTAuth\Providers\JWT\Lcobucci;
+use ifs\JWTAuth\Providers\JWT\Provider;
+use ifs\JWTAuth\Test\AbstractTestCase;
 
 class LcobucciTest extends AbstractTestCase
 {

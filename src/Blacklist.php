@@ -3,23 +3,23 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace ifs\JWTAuth;
 
-use Tymon\JWTAuth\Contracts\Providers\Storage;
-use Tymon\JWTAuth\Support\Utils;
+use ifs\JWTAuth\Contracts\Providers\Storage;
+use ifs\JWTAuth\Support\Utils;
 
 class Blacklist
 {
     /**
      * The storage.
      *
-     * @var \Tymon\JWTAuth\Contracts\Providers\Storage
+     * @var \ifs\JWTAuth\Contracts\Providers\Storage
      */
     protected $storage;
 
@@ -47,7 +47,7 @@ class Blacklist
     /**
      * Constructor.
      *
-     * @param  \Tymon\JWTAuth\Contracts\Providers\Storage  $storage
+     * @param  \ifs\JWTAuth\Contracts\Providers\Storage  $storage
      * @return void
      */
     public function __construct(Storage $storage)
@@ -58,7 +58,7 @@ class Blacklist
     /**
      * Add the token (jti claim) to the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ifs\JWTAuth\Payload  $payload
      * @return bool
      */
     public function add(Payload $payload)
@@ -86,7 +86,7 @@ class Blacklist
     /**
      * Get the number of minutes until the token expiry.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ifs\JWTAuth\Payload  $payload
      * @return int
      */
     protected function getMinutesUntilExpired(Payload $payload)
@@ -103,7 +103,7 @@ class Blacklist
     /**
      * Add the token (jti claim) to the blacklist indefinitely.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ifs\JWTAuth\Payload  $payload
      * @return bool
      */
     public function addForever(Payload $payload)
@@ -116,7 +116,7 @@ class Blacklist
     /**
      * Determine whether the token has been blacklisted.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ifs\JWTAuth\Payload  $payload
      * @return bool
      */
     public function has(Payload $payload)
@@ -135,7 +135,7 @@ class Blacklist
     /**
      * Remove the token (jti claim) from the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ifs\JWTAuth\Payload  $payload
      * @return bool
      */
     public function remove(Payload $payload)
@@ -192,7 +192,7 @@ class Blacklist
     /**
      * Get the unique key held within the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \ifs\JWTAuth\Payload  $payload
      * @return mixed
      */
     public function getKey(Payload $payload)

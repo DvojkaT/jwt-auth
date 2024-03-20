@@ -3,15 +3,15 @@
 /*
  * This file is part of jwt-auth.
  *
- * (c) Sean Tymon <tymon148@gmail.com>
+ * (c) Sean ifs <ifs148@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Fixtures;
+namespace ifs\JWTAuth\Test\Fixtures;
 
-use Tymon\JWTAuth\Claims\Claim;
+use ifs\JWTAuth\Claims\Claim;
 
 class Foo extends Claim
 {
